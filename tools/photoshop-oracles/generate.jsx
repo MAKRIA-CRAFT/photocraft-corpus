@@ -1,6 +1,6 @@
 // PhotoCraft Photoshop oracle corpus generator (ExtendScript, run inside Adobe Photoshop).
 //
-// Authors every file of photoshop/ (storytold/photocraft-corpus) from scratch: generated gradients, shapes and text
+// Authors every file of photoshop/ (MAKRIA-CRAFT/photocraft-corpus) from scratch: generated gradients, shapes and text
 // (no third-party images, no Adobe presets, patterns, contours or profiles). Each file is saved
 // with Maximize Compatibility on, so its merged composite is Photoshop's own rendering of the
 // layer stack: the oracle PhotoCraft's corpus tests compare its flatten with.

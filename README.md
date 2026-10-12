@@ -29,7 +29,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/storytold/photocraft"><b>PhotoCraft on GitHub</b></a> ·
+  <a href="https://github.com/MAKRIA-CRAFT/photocraft"><b>PhotoCraft on GitHub</b></a> ·
   <a href="https://getartcraft.com/apps/photocraft">PhotoCraft on getartcraft.com</a> ·
   <a href="https://getartcraft.com/">ArtCraft</a> ·
   <a href="https://getartcraft.com/apps">All Crafting Apps</a>
@@ -48,7 +48,7 @@
 
 ## What this is
 
-These are real-file oracles for [PhotoCraft](https://github.com/storytold/photocraft) and for any
+These are real-file oracles for [PhotoCraft](https://github.com/MAKRIA-CRAFT/photocraft) and for any
 Crafting App that reads PSD. Each test file is a document together with the output of the
 application that made it. A PSD saved with **Maximize Compatibility** holds a merged composite,
 which is Photoshop's own rendering of its layer stack. Importers, compositors, filter stacks and
@@ -72,7 +72,7 @@ cargo xtask test-corpus          # fetch everything, then run every corpus test
 - **Where the files land:** `corpus/photoshop/` in the PhotoCraft checkout. It is gitignored and
   never committed. A complete, verified copy is left alone, so running the command again is cheap.
 - **The pin:** `PHOTOCRAFT_CORPUS_COMMIT` in
-  [`xtask/src/corpus_pins.rs`](https://github.com/storytold/photocraft/blob/main/xtask/src/corpus_pins.rs) (every
+  [`xtask/src/corpus_pins.rs`](https://github.com/MAKRIA-CRAFT/photocraft/blob/main/xtask/src/corpus_pins.rs) (every
   corpus pin is in that one file). The manifest the download is checked against is
   `xtask/photoshop-corpus.sha256`.
 - **Bumping the pin:** in a PhotoCraft PR, set `PHOTOCRAFT_CORPUS_COMMIT` to the new commit here, then run
@@ -96,7 +96,7 @@ cargo xtask test-corpus          # fetch everything, then run every corpus test
 
 | What | Where | What it is |
 |---|---|---|
-| **Authoring clone** | `photocraft-corpus/`, next to `photocraft/` (for example `~/dev/craft-apps/photocraft-corpus`), cloned with `git clone git@github.com:storytold/photocraft-corpus.git` | A normal git clone. Generators write here, and commits and pushes happen here. |
+| **Authoring clone** | `photocraft-corpus/`, next to `photocraft/` (for example `~/dev/craft-apps/photocraft-corpus`), cloned with `git clone git@github.com:MAKRIA-CRAFT/photocraft-corpus.git` | A normal git clone. Generators write here, and commits and pushes happen here. |
 | **Consuming copy** | `photocraft/corpus/photoshop/` (gitignored) | A plain directory: the pinned snapshot that `cargo xtask corpus --photoshop` downloads and verifies. It is not a git repo, a submodule or a subtree. |
 | **Local mode** | `cargo xtask corpus --photoshop --local`, or `cargo xtask test-corpus --local` | Copies `photoshop/` from the authoring clone (`../photocraft-corpus`, or `PHOTOCRAFT_CORPUS_REPO=<path>`) into the consuming copy instead of downloading. It warns when the clone's HEAD differs from the pin, so you can test regenerated files against PhotoCraft before pushing and bumping the pin. |
 
@@ -133,15 +133,15 @@ From PhotoCraft, see [Using this from PhotoCraft](#using-this-from-photocraft).
 Directly, for another app or for browsing:
 
 ```sh
-git clone --depth 1 https://github.com/storytold/photocraft-corpus.git
+git clone --depth 1 https://github.com/MAKRIA-CRAFT/photocraft-corpus.git
 # or a pinned snapshot without git (generic User-Agent, no personal details):
-curl -fsSL -A Photocraft-dev -o corpus.tar.gz https://codeload.github.com/storytold/photocraft-corpus/tar.gz/<commit>
+curl -fsSL -A Photocraft-dev -o corpus.tar.gz https://codeload.github.com/MAKRIA-CRAFT/photocraft-corpus/tar.gz/<commit>
 ```
 
 If another app consumes this repository, copy the pattern (not the code): pin a commit, keep your
 own sha256 manifest, verify after download, and let the tests skip when the files are absent. See
 the craftrules
-[test-corpora standard](https://github.com/storytold/craftrules/blob/main/standards/test-corpora.md).
+[test-corpora standard](https://github.com/MAKRIA-CRAFT/craftrules/blob/main/standards/test-corpora.md).
 
 ## Verifying
 
@@ -302,13 +302,13 @@ formats can use it.
 
 | | App | What it's for | Code | Learn more |
 |:-:|---|---|---|---|
-| <img src="https://raw.githubusercontent.com/storytold/photocraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.photocraft.png" alt="" width="32" height="32"> | **PhotoCraft** | Image editing: layers, masks, type and real PSD files | [GitHub](https://github.com/storytold/photocraft) | [Website](https://getartcraft.com/apps/photocraft) |
-| <img src="https://raw.githubusercontent.com/storytold/vectorcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.vectorcraft.png" alt="" width="32" height="32"> | **VectorCraft** | Vector illustration | [GitHub](https://github.com/storytold/vectorcraft) | [Website](https://getartcraft.com/apps/vectorcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/filmcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.filmcraft.png" alt="" width="32" height="32"> | **FilmCraft** | Video editing, color and sound | [GitHub](https://github.com/storytold/filmcraft) | [Website](https://getartcraft.com/apps/filmcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/lightcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.lightcraft.png" alt="" width="32" height="32"> | **LightCraft** | Photo library and raw development | [GitHub](https://github.com/storytold/lightcraft) | [Website](https://getartcraft.com/apps/lightcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/pdfcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.pdfcraft.png" alt="" width="32" height="32"> | **PdfCraft** | Reading, organizing and protecting PDFs | [GitHub](https://github.com/storytold/pdfcraft) | [Website](https://getartcraft.com/apps/pdfcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/effectcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.effectcraft.png" alt="" width="32" height="32"> | **EffectCraft** | Motion graphics and visual effects | [GitHub](https://github.com/storytold/effectcraft) | [Website](https://getartcraft.com/apps/effectcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/designcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.designcraft.png" alt="" width="32" height="32"> | **DesignCraft** | Page layout and publishing | [GitHub](https://github.com/storytold/designcraft) | [Website](https://getartcraft.com/apps/designcraft) |
+| <img src="https://raw.githubusercontent.com/MAKRIA-CRAFT/photocraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.photocraft.png" alt="" width="32" height="32"> | **PhotoCraft** | Image editing: layers, masks, type and real PSD files | [GitHub](https://github.com/MAKRIA-CRAFT/photocraft) | [Website](https://getartcraft.com/apps/photocraft) |
+| <img src="https://raw.githubusercontent.com/MAKRIA-CRAFT/vectorcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.vectorcraft.png" alt="" width="32" height="32"> | **VectorCraft** | Vector illustration | [GitHub](https://github.com/MAKRIA-CRAFT/vectorcraft) | [Website](https://getartcraft.com/apps/vectorcraft) |
+| <img src="https://raw.githubusercontent.com/MAKRIA-CRAFT/filmcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.filmcraft.png" alt="" width="32" height="32"> | **FilmCraft** | Video editing, color and sound | [GitHub](https://github.com/MAKRIA-CRAFT/filmcraft) | [Website](https://getartcraft.com/apps/filmcraft) |
+| <img src="https://raw.githubusercontent.com/MAKRIA-CRAFT/lightcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.lightcraft.png" alt="" width="32" height="32"> | **LightCraft** | Photo library and raw development | [GitHub](https://github.com/MAKRIA-CRAFT/lightcraft) | [Website](https://getartcraft.com/apps/lightcraft) |
+| <img src="https://raw.githubusercontent.com/MAKRIA-CRAFT/pdfcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.pdfcraft.png" alt="" width="32" height="32"> | **PdfCraft** | Reading, organizing and protecting PDFs | [GitHub](https://github.com/MAKRIA-CRAFT/pdfcraft) | [Website](https://getartcraft.com/apps/pdfcraft) |
+| <img src="https://raw.githubusercontent.com/MAKRIA-CRAFT/effectcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.effectcraft.png" alt="" width="32" height="32"> | **EffectCraft** | Motion graphics and visual effects | [GitHub](https://github.com/MAKRIA-CRAFT/effectcraft) | [Website](https://getartcraft.com/apps/effectcraft) |
+| <img src="https://raw.githubusercontent.com/MAKRIA-CRAFT/designcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.designcraft.png" alt="" width="32" height="32"> | **DesignCraft** | Page layout and publishing | [GitHub](https://github.com/MAKRIA-CRAFT/designcraft) | [Website](https://getartcraft.com/apps/designcraft) |
 
 And [**ArtCraft**](https://getartcraft.com/) itself, our AI image and video studio for artists who want real control.
 

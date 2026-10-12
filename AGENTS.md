@@ -5,17 +5,17 @@
 1. [`README.md`](README.md): what this repository is, the layout, fetching, pinning,
    regenerating, size guidance, licence.
 2. The craftrules standards, especially
-   [test corpora](https://github.com/storytold/craftrules/blob/main/standards/test-corpora.md) and
-   [licensing](https://github.com/storytold/craftrules/blob/main/standards/licensing.md)
-   (repository: https://github.com/storytold/craftrules).
-3. PhotoCraft's [`AGENTS.md`](https://github.com/storytold/photocraft/blob/main/AGENTS.md):
+   [test corpora](https://github.com/MAKRIA-CRAFT/craftrules/blob/main/standards/test-corpora.md) and
+   [licensing](https://github.com/MAKRIA-CRAFT/craftrules/blob/main/standards/licensing.md)
+   (repository: https://github.com/MAKRIA-CRAFT/craftrules).
+3. PhotoCraft's [`AGENTS.md`](https://github.com/MAKRIA-CRAFT/photocraft/blob/main/AGENTS.md):
    the clean-room rule and how its tests use these files.
 
 ## 2. Where things live
 
 | What | Where |
 |---|---|
-| Authoring clone | `photocraft-corpus/` next to `photocraft/`, a normal clone of `git@github.com:storytold/photocraft-corpus.git`. Work, commit and push here. |
+| Authoring clone | `photocraft-corpus/` next to `photocraft/`, a normal clone of `git@github.com:MAKRIA-CRAFT/photocraft-corpus.git`. Work, commit and push here. |
 | Consuming copy | `photocraft/corpus/photoshop/`: a gitignored plain directory filled by `cargo xtask corpus --photoshop`. Never edit it. |
 | Local mode | `cargo xtask corpus --photoshop --local` (or `cargo xtask test-corpus --local`) copies from the authoring clone (or `PHOTOCRAFT_CORPUS_REPO=<path>`) and warns if HEAD differs from the pin. |
 
